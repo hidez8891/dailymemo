@@ -1,0 +1,28 @@
+{
+  "name": "dailymemo",
+  "version": "0.0.1",
+  "description": "daily memo tool (write evernote)",
+  "main": "dest/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hidez8891",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "electron-packager": "^5.2.0",
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.1",
+    "gulp-typescript": "^2.10.0",
+    "node-font-awesome": "^1.0.2",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    "enml-js": "^0.1.3",
+    "evernote": "^1.25.82",
+    "font-awesome": "^4.5.0",
+    "mithril": "^0.2.2-rc.1"
+  }
+}

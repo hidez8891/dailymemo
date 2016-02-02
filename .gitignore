@@ -1,0 +1,9 @@
+# work space
+build
+dest
+
+# npm directory
+node_modules
+
+# user configuration file
+config.json

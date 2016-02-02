@@ -1,0 +1,135 @@
+$body_width: 500px;
+$font_size: 24px;
+
+@mixin frame {
+    background: #fff;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
+    border-radius: 5px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, "Arial",
+                 "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+                 "メイリオ", Meiryo, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    width: $body_width;
+    margin: 0 auto;
+    background-color: #bc8f8f;
+    -webkit-font-smoothing: antialiased;
+}
+
+.flow {
+  display: -webkit-box;
+
+  & > * {
+    display: -webkit-box;
+  }
+}
+
+#input-form {
+    @include frame;
+    border-radius: 0 0 5px 5px;
+    margin-bottom: 20px;
+
+    input[type="date"] {
+        font-size: $font_size;
+        border: 1px solid transparent;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-clear-button,
+        &::-webkit-datetime-edit {
+            display: none;
+        }
+
+        &::-webkit-calendar-picker-indicator {
+            color: transparent;
+            position: relative;
+            opacity: 1;
+            cursor: pointer;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &::-webkit-calendar-picker-indicator:before {
+            color: #666;
+            font-family: FontAwesome;
+            content: "\f073";
+            position: absolute;
+            left: 5px;
+            top:  2px;
+        }
+    }
+
+    input[type="text"] {
+        font-size: $font_size;
+        border: 1px solid #ccc;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        -webkit-box-flex: 1;
+    }
+    button {
+        font-size: $font_size;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-left: none;
+        cursor: pointer;
+
+        &#update {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+        }
+    }
+}
+
+#drop-list {
+    @include frame;
+
+    table {
+        width: 440px;
+        margin: 0 auto;
+        border-spacing: 0;
+    }
+
+    tr {
+        td {
+            padding: 8px;
+            line-height: 1.42857;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+        &:last-child td {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .name {
+            -webkit-box-flex: 1;
+        }
+
+        .trash button {
+            visibility: hidden;
+            border: 1px solid transparent;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        &:hover .trash button {
+            visibility: visible;
+        }
+    }
+}
